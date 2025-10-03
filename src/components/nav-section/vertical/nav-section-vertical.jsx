@@ -5,9 +5,9 @@ import Collapse from '@mui/material/Collapse';
 import { useTheme } from '@mui/material/styles';
 
 import { NavList } from './nav-list';
+import { NavUl, NavLi } from '../styles';
 import { navSectionClasses } from '../classes';
 import { navSectionCssVars } from '../css-vars';
-import { NavUl, NavLi, Subheader } from '../styles';
 
 // ----------------------------------------------------------------------
 
@@ -72,14 +72,14 @@ function Group({ items, render, subheader, slotProps, enabledRootRedirect }) {
     <NavLi>
       {subheader ? (
         <>
-          <Subheader
+          {/* <Subheader
             data-title={subheader}
             open={open}
             onClick={handleToggle}
             sx={slotProps?.subheader}
           >
             {subheader}
-          </Subheader>
+          </Subheader> */}
 
           <Collapse in={open}>{renderContent}</Collapse>
         </>

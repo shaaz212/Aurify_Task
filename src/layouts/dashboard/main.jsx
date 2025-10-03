@@ -31,7 +31,7 @@ export function Main({ children, isNavHorizontal, sx, ...other }) {
 
 // ----------------------------------------------------------------------
 
-export function DashboardContent({ sx, children, disablePadding, maxWidth = 'lg', ...other }) {
+export function DashboardContent({ sx, children, disablePadding, maxWidth = 'xl', ...other }) {
   const theme = useTheme();
 
   const settings = useSettingsContext();
@@ -48,7 +48,7 @@ export function DashboardContent({ sx, children, disablePadding, maxWidth = 'lg'
         flexDirection: 'column',
         pt: 'var(--layout-dashboard-content-pt)',
         pb: 'var(--layout-dashboard-content-pb)',
-        [theme.breakpoints.up(layoutQuery)]: {
+        [theme.breakpoints.up('xl')]: {
           px: 'var(--layout-dashboard-content-px)',
         },
         ...(disablePadding && {

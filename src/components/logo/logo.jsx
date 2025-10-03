@@ -6,12 +6,15 @@ import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
 
+import LogoImg from 'src/assets/logo/logo.png';
+
+import { Image } from '../image';
 import { logoClasses } from './classes';
 
 // ----------------------------------------------------------------------
 
 export const Logo = forwardRef(
-  ({ width = 40, height = 40, disableLink = false, className, href = '/', sx, ...other }, ref) => {
+  ({ width = 100, height = 40, disableLink = false, className, href = '/', sx, ...other }, ref) => {
     const theme = useTheme();
 
     const gradientId = useId();
@@ -96,7 +99,7 @@ export const Logo = forwardRef(
           }}
           {...other}
         >
-          {logo}
+          <Image src={LogoImg} />
         </Box>
       </NoSsr>
     );

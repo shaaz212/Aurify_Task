@@ -44,7 +44,7 @@ export function AuthProvider({ children }) {
 
   // ----------------------------------------------------------------------
 
-  const checkAuthenticated = state.user ? 'authenticated' : 'unauthenticated';
+  const checkAuthenticated = 'authenticated';
 
   const status = state.loading ? 'loading' : checkAuthenticated;
 

@@ -1,22 +1,13 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
-
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
 
 import { Logo } from 'src/components/logo';
 
 import { HeaderSection } from './header-section';
-import { Searchbar } from '../components/searchbar';
 import { MenuButton } from '../components/menu-button';
-import { SignInButton } from '../components/sign-in-button';
-import { AccountDrawer } from '../components/account-drawer';
 import { SettingsButton } from '../components/settings-button';
-import { LanguagePopover } from '../components/language-popover';
-import { ContactsPopover } from '../components/contacts-popover';
-import { WorkspacesPopover } from '../components/workspaces-popover';
+import { ModeChangeButton } from '../components/mode-change-button';
 import { NotificationsDrawer } from '../components/notifications-drawer';
 
 // ----------------------------------------------------------------------
@@ -68,6 +59,7 @@ export function HeaderBase({
     menuButton = true,
     localization = true,
     notifications = true,
+    modeChange = true,
   } = {},
 
   ...other
@@ -103,9 +95,19 @@ export function HeaderBase({
 
             {/* -- Divider -- */}
             <StyledDivider data-slot="divider" />
+            {modeChange && <ModeChangeButton />}
+
+            <Typography variant="subtitle2">
+              {new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </Typography>
 
             {/* -- Workspace popover -- */}
-            {workspaces && <WorkspacesPopover data-slot="workspaces" data={data?.workspaces} />}
+            {/* {workspaces && <WorkspacesPopover data-slot="workspaces" data={data?.workspaces} />} */}
 
             {slots?.leftAreaEnd}
           </>
@@ -123,7 +125,7 @@ export function HeaderBase({
               }}
             >
               {/* -- Help link -- */}
-              {helpLink && (
+              {/* {helpLink && (
                 <Link
                   data-slot="help-link"
                   href={paths.faqs}
@@ -133,13 +135,13 @@ export function HeaderBase({
                 >
                   Need help?
                 </Link>
-              )}
+              )} */}
 
               {/* -- Searchbar -- */}
-              {searchbar && <Searchbar data-slot="searchbar" data={data?.nav} />}
+              {/* {searchbar && <Searchbar data-slot="searchbar" data={data?.nav} />} */}
 
               {/* -- Language popover -- */}
-              {localization && <LanguagePopover data-slot="localization" data={data?.langs} />}
+              {/* {localization && <LanguagePopover data-slot="localization" data={data?.langs} />} */}
 
               {/* -- Notifications popover -- */}
               {notifications && (
@@ -147,19 +149,19 @@ export function HeaderBase({
               )}
 
               {/* -- Contacts popover -- */}
-              {contacts && <ContactsPopover data-slot="contacts" data={data?.contacts} />}
+              {/* {contacts && <ContactsPopover data-slot="contacts" data={data?.contacts} />} */}
 
               {/* -- Settings button -- */}
               {settings && <SettingsButton data-slot="settings" />}
 
               {/* -- Account drawer -- */}
-              {account && <AccountDrawer data-slot="account" data={data?.account} />}
+              {/* {account && <AccountDrawer data-slot="account" data={data?.account} />} */}
 
               {/* -- Sign in button -- */}
-              {signIn && <SignInButton />}
+              {/* {signIn && <SignInButton />} */}
 
               {/* -- Purchase button -- */}
-              {purchase && (
+              {/* {purchase && (
                 <Button
                   data-slot="purchase"
                   variant="contained"
@@ -175,7 +177,7 @@ export function HeaderBase({
                 >
                   Purchase
                 </Button>
-              )}
+              )} */}
             </Box>
 
             {slots?.rightAreaEnd}

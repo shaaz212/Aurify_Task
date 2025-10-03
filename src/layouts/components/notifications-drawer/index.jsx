@@ -117,7 +117,7 @@ export function NotificationsDrawer({ data = [], sx, ...other }) {
         whileTap="tap"
         whileHover="hover"
         variants={varHover(1.05)}
-        onClick={drawer.onTrue}
+        // onClick={drawer.onTrue}
         sx={sx}
         {...other}
       >

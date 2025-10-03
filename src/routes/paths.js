@@ -12,6 +12,7 @@ const ROOTS = {
   AUTH: '/auth',
   AUTH_DEMO: '/auth-demo',
   DASHBOARD: '/dashboard',
+  APP: '',
 };
 
 // ----------------------------------------------------------------------
@@ -178,6 +179,16 @@ export const paths = {
         details: `${ROOTS.DASHBOARD}/tour/${MOCK_ID}`,
         edit: `${ROOTS.DASHBOARD}/tour/${MOCK_ID}/edit`,
       },
+    },
+  },
+  // app
+  app: {
+    dashboard: `${ROOTS.APP}/dashboard`,
+    trade: `${ROOTS.APP}/trade`,
+    positions: `${ROOTS.APP}/positions`,
+    users: {
+      root: `${ROOTS.APP}/users`,
+      details: (id) => `${ROOTS.APP}/users/${id}`,
     },
   },
 };

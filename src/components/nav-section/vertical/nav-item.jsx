@@ -2,8 +2,8 @@ import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { stylesMode } from 'src/theme/styles';
 
@@ -36,6 +36,7 @@ export const NavItem = forwardRef(
     },
     ref
   ) => {
+    const theme = useTheme();
     const navItem = useNavItem({
       path,
       icon,
@@ -69,7 +70,24 @@ export const NavItem = forwardRef(
         {...other}
       >
         {icon && (
-          <Box component="span" className={navSectionClasses.item.icon}>
+          <Box
+            component="span"
+            // className={navSectionClasses.item.icon}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              p: 2,
+              mr: 1,
+              borderRadius: '50%',
+              bgcolor: theme.palette.mode === 'light' ? 'grey.50' : 'grey.800',
+              border: `1px solid ${
+                theme.palette.mode === 'light' ? theme.palette.grey[300] : theme.palette.grey[700]
+              }`,
+              width: 35,
+              height: 35,
+            }}
+          >
             {navItem.renderIcon}
           </Box>
         )}

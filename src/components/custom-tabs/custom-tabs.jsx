@@ -18,6 +18,8 @@ export function CustomTabs({ children, slotProps, sx, ...other }) {
         flexShrink: 0,
         alignItems: 'center',
         bgcolor: 'background.neutral',
+        borderRadius: slotProps?.root?.borderRadius || 0,
+        overflow: 'hidden',
         [`& .${tabsClasses.scroller}`]: {
           p: 1,
           ...slotProps?.scroller,

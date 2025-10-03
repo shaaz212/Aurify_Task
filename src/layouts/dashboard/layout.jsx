@@ -127,7 +127,7 @@ export function DashboardLayout({ sx, children, data }) {
               container: {
                 maxWidth: false,
                 sx: {
-                  ...(isNavVertical && { px: { [layoutQuery]: 5 } }),
+                  ...(isNavVertical && { px: { [layoutQuery]: 2 } }),
                 },
               },
             }}

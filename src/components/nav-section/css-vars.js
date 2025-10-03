@@ -19,7 +19,7 @@ function colorVars(theme, variant) {
     // root
     '--nav-item-root-active-color': palette.primary.main,
     '--nav-item-root-active-color-on-dark': palette.primary.light,
-    '--nav-item-root-active-bg': varAlpha(palette.primary.mainChannel, 0.08),
+    '--nav-item-root-active-bg': varAlpha(palette.primary.mainChannel, 0.1),
     '--nav-item-root-active-hover-bg': varAlpha(palette.primary.mainChannel, 0.16),
     '--nav-item-root-open-color': palette.text.primary,
     '--nav-item-root-open-bg': palette.action.hover,
@@ -44,10 +44,10 @@ function verticalVars(theme) {
   return {
     ...colorVars(theme, 'vertical'),
     '--nav-item-gap': spacing(0.5),
-    '--nav-item-radius': `${shape.borderRadius}px`,
-    '--nav-item-pt': spacing(0.5),
+    '--nav-item-radius': `50px`,
+    '--nav-item-pt': spacing(1),
     '--nav-item-pr': spacing(1),
-    '--nav-item-pb': spacing(0.5),
+    '--nav-item-pb': spacing(1),
     '--nav-item-pl': spacing(1.5),
     // root
     '--nav-item-root-height': '44px',
